@@ -37,12 +37,23 @@ const Nav = ({ onScroll }) => {
             {/* Mobile Menu */}
             {isModalOpen && (
                 <div className="absolute top-16 left-0 w-full bg-white shadow-lg md:hidden">
-                    {['Home', 'Why Choose us', 'Amenities', 'Location', 'Other Projects', 'Payments', 'Contact Us'].map((item) => (
-                        <a key={item} href="#" className="block py-3 px-4 border-b border-gray-200 text-gray-900 hover:bg-gray-100">
-                            {item}
-                        </a>
-                    ))}
-                </div>
+  {[
+    'Home',
+    'Why Choose us',
+    'Amenities',
+    'Location',
+    'Other Projects',
+    'Contact Us',
+  ].map((item) => (
+    <a
+      key={item}
+      onClick={() => onScroll(item)} // ✅ Fixed here
+      className="block py-3 px-4 border-b border-gray-200 text-gray-900 hover:bg-gray-100"
+    >
+      {item}
+    </a>
+  ))}
+</div>
             )}
         </div>
     );
