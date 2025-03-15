@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
+import  { datastore } from "../serveractions/actions"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const Modal = ({ isOpen, onClose }) => {
+    const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,11 +16,34 @@ export const Modal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    onClose();
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('Form submitted:', formData);
+  //   onClose();
+  // };
+   const handleSubmit = async (e) => {
+      e.preventDefault();
+      setLoading(true);
+  
+      try {
+        console.log(formData);
+        await datastore(formData); // Assuming datastore is async
+  
+        toast.success('Form submitted successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          comments: '',
+        });
+      
+      } catch (error) {
+        console.error(error);
+        toast.error('Failed to submit form');
+      } finally {
+        setLoading(false);
+      }
+    };
 
   const handleChange = (e) => {
     const { name, value } = e.target;

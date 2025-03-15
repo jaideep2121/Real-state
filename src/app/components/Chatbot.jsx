@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import  { datastore } from "../serveractions/actions"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,19 +20,47 @@ const Chatbot = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    alert('Form submitted');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      comment: ''
-    });
-    setIsOpen(false);
-  };
+  // const handleSubmit = (e) => {
+  //  try{
+  //   e.preventDefault();
+  //   console.log(formData);
+  //   datastore(formData);
 
+  //   alert('Form submitted');
+  //   setFormData({
+  //     name: '',
+  //     email: '',
+  //     phone: '',
+  //     comment: ''
+  //   });
+  //   setIsOpen(false);
+  //  }catch(error){
+  //   console.log(error);
+  //  }
+  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      console.log(formData);
+      await datastore(formData); // Assuming datastore is async
+
+      toast.success('Form submitted successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        comment: ''
+      });
+      setIsOpen(false);
+    } catch (error) {
+      console.error(error);
+      toast.error('Failed to submit form');
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8">
       {/* Floating Button */}

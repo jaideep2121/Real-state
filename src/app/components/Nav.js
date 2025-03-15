@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 
-const Nav = ({ setopen }) => {
+const Nav = ({ onScroll }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -13,16 +13,16 @@ const Nav = ({ setopen }) => {
 
             {/* Menu */}
             <ul className="hidden md:flex space-x-6">
-                {['Home', 'Why Choose us', 'Amenities', 'Location', 'Other Projects', 'Payments', 'Contact Us'].map((item) => (
-                    <li key={item} className="text-gray-900 font-mullish py-7 hover:text-gray-600 cursor-pointer transition-all duration-200 relative font-bold">
-                        <a href="#">{item}</a>
+                {['Home', 'Why Choose us', 'Amenities', 'Location', 'Other Projects', 'Contact Us'].map((item) => (
+                    <li key={item} className="text-gray-900 font-mullish py-7 hover:text-gray-600 cursor-pointer transition-all duration-200 relative font-bold group" onClick={() => onScroll(item)}>
+                        {item}
                         <div className="absolute bottom-0 w-full h-1 bg-blue-400 hidden group-hover:block transition-all duration-200"></div>
                     </li>
                 ))}
             </ul>
 
             {/* Contact Button */}
-            <div className="h-14 bg-gradient-to-r from-gray-200 to-yellow-100 flex items-center justify-center text-black ring px-4 hover:scale-110 transform transition duration-300 ease-in-out hidden sm:flex">
+            <div className="h-14 bg-gradient-to-r from-gray-200 to-yellow-100 flex items-center justify-center text-black ring px-4 hover:scale-110 transform transition duration-300 ease-in-out hidden sm:flex rounded">
     +919999999999
 </div>
 
