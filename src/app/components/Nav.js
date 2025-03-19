@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import { FaPhone } from 'react-icons/fa';
 
 const Nav = ({ onScroll }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,9 +23,12 @@ const Nav = ({ onScroll }) => {
             </ul>
 
             {/* Contact Button */}
-            <div className="h-14 bg-gradient-to-r from-gray-200 to-yellow-100 flex items-center justify-center text-black ring px-4 hover:scale-110 transform transition duration-300 ease-in-out hidden sm:flex rounded">
-    +919999999999
-</div>
+            <a href="tel:+919999999999">
+  <div className="h-14 bg-gradient-to-r from-gray-200 to-yellow-100 flex items-center justify-center text-black ring px-4 hover:scale-110 transform transition duration-300 ease-in-out hidden sm:flex rounded">
+    +918287701077
+  </div>
+</a>
+
 
 
             {/* Mobile Menu Button */}
@@ -32,6 +36,10 @@ const Nav = ({ onScroll }) => {
                 <button onClick={() => setIsModalOpen(!isModalOpen)} className="text-gray-900">
                     ☰
                 </button>
+                  {/* Phone Icon */}
+        <a href="tel:+918287701077" className="text-gray-900 hover:text-gray-600">
+          <FaPhone size={24} />
+        </a>
             </div>
 
             {/* Mobile Menu */}
