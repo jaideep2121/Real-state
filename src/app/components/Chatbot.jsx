@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import  { datastore } from "../serveractions/actions"
+import { datastore } from "../serveractions/actions";
 import { toast } from 'react-toastify';
+import { FaWhatsapp } from 'react-icons/fa';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Chatbot = () => {
@@ -20,32 +21,13 @@ const Chatbot = () => {
     });
   };
 
-  // const handleSubmit = (e) => {
-  //  try{
-  //   e.preventDefault();
-  //   console.log(formData);
-  //   datastore(formData);
-
-  //   alert('Form submitted');
-  //   setFormData({
-  //     name: '',
-  //     email: '',
-  //     phone: '',
-  //     comment: ''
-  //   });
-  //   setIsOpen(false);
-  //  }catch(error){
-  //   console.log(error);
-  //  }
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
       console.log(formData);
-      await datastore(formData); // Assuming datastore is async
-
+      await datastore(formData);
       toast.success('Form submitted successfully!');
       setFormData({
         name: '',
@@ -61,14 +43,28 @@ const Chatbot = () => {
       setLoading(false);
     }
   };
+
+  const handleWhatsApp = () => {
+    const message = encodeURIComponent(`Hello, I'm interested in your services.`);
+    window.open(`https://wa.me/8287701077?text=${message}`, '_blank');
+  };
+
   return (
-    <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8">
+    <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 flex gap-2">
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
       >
         {isOpen ? 'Close' : 'Contact Us!'}
+      </button>
+
+      {/* WhatsApp Button */}
+      <button
+        onClick={handleWhatsApp}
+        className="bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center"
+      >
+        <FaWhatsapp size={24} />
       </button>
 
       {/* Modal */}
@@ -114,8 +110,9 @@ const Chatbot = () => {
             <button
               type="submit"
               className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300"
+              disabled={loading}
             >
-              Submit
+              {loading ? 'Submitting...' : 'Submit'}
             </button>
           </form>
         </div>
