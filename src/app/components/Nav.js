@@ -36,10 +36,6 @@ const Nav = ({ onScroll }) => {
                 <button onClick={() => setIsModalOpen(!isModalOpen)} className="text-gray-900">
                     ☰
                 </button>
-                  {/* Phone Icon */}
-        <a href="tel:+918287701077" className="text-gray-900 hover:text-gray-600">
-          <FaPhone size={24} />
-        </a>
             </div>
 
             {/* Mobile Menu */}
@@ -63,6 +59,14 @@ const Nav = ({ onScroll }) => {
   ))}
 </div>
             )}
+            <a
+  href="tel:+918287701077"
+  className="block md:hidden py-3 px-4 border-t border-gray-200 text-gray-900 hover:bg-gray-100 flex items-center gap-2"
+>
+  <FaPhone size={20} />
+  
+</a>
+
         </div>
     );
 };
