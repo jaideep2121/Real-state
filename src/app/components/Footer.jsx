@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Footer = () => {
@@ -9,9 +10,9 @@ const Footer = () => {
           <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3">
             About Us
           </h3>
-          <p className="text-xs sm:text-sm leading-relaxed">
+          <h3 className="text-xs sm:text-sm leading-relaxed text-white ">
             We are committed to delivering the best experience for our customers.
-          </p>
+          </h3>
         </div>
 
         {/* Quick Links */}
@@ -44,23 +45,23 @@ const Footer = () => {
             Legal
           </h3>
           <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
-            <li>
-              <a href="#" className="hover:text-white transition">
-                Terms and Conditions
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white transition">
-                Privacy Policy
-              </a>
-            </li>
+          <li>
+      <Link href="/LegalPolicy" className="hover:text-white transition">
+        Terms and Conditions
+      </Link>
+    </li>
+    <li>
+      <Link href="/LegalPolicy" className="hover:text-white transition">
+       Privacy Policy
+      </Link>
+    </li>
           </ul>
         </div>
       </div>
 
       {/* Copyright */}
       <div className="text-center text-xs sm:text-sm border-t border-gray-700 pt-4 mt-6">
-        © {new Date().getFullYear()} Your Company. All rights reserved.
+        This is not the official website of developer property, it belongs to authorised channel partners for information purposes only. All rights for logo & images are reserved to the developer. Thank you for visiting our website. This disclaimer ("Disclaimer") is applicable to this website and all microsites and websites owned by us. By using or accessing this website you agree with the Disclaimer without any qualification or limitation. || All Rights Reserved CopyRight © 2025
       </div>
     </footer>
   );
