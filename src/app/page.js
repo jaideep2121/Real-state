@@ -9,12 +9,14 @@ import LocationAdvantage from './components/LocationAdvantage';
 import Footer from './components/Footer';
 import Other from './components/Other';
 import Chatbot from './components/Chatbot';
+import Pricing from './components/Pricing';
 
 export default function Home() {
   const homeRef = useRef(null);
   const featureRef = useRef(null);
   const amenitiesRef = useRef(null);
   const locationRef = useRef(null);
+  const priceref=useRef(null);
   const otherRef = useRef(null);
 
   const handleScroll = (section) => {
@@ -39,6 +41,7 @@ export default function Home() {
             if (section === 'Amenities') handleScroll(amenitiesRef);
             if (section === 'Location') handleScroll(locationRef);
             if (section === 'Other Projects') handleScroll(otherRef);
+            if(section==='Pricing') handleScroll(priceref);
           }}
         />
         <Tab />
@@ -46,6 +49,9 @@ export default function Home() {
 
       <div ref={featureRef}>
         <Feature />
+      </div>
+      <div ref={priceref}>
+        <Pricing/>
       </div>
 
       <div ref={amenitiesRef}>

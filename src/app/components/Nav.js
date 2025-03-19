@@ -14,7 +14,7 @@ const Nav = ({ onScroll }) => {
 
             {/* Menu */}
             <ul className="hidden md:flex space-x-6">
-                {['Home', 'Why Choose us', 'Amenities', 'Location', 'Other Projects', 'Contact Us'].map((item) => (
+                {['Home', 'Why Choose us','Pricing', 'Amenities', 'Location', 'Other Projects', 'Contact Us'].map((item) => (
                     <li key={item} className="text-gray-900 font-mullish py-7 hover:text-gray-600 cursor-pointer transition-all duration-200 relative font-bold group" onClick={() => onScroll(item)}>
                         {item}
                         <div className="absolute bottom-0 w-full h-1 bg-blue-400 hidden group-hover:block transition-all duration-200"></div>
@@ -44,6 +44,7 @@ const Nav = ({ onScroll }) => {
   {[
     'Home',
     'Why Choose us',
+    'Pricing',
     'Amenities',
     'Location',
     'Other Projects',
