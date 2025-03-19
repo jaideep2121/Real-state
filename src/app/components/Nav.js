@@ -33,7 +33,7 @@ const Nav = ({ onScroll }) => {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-                <button onClick={() => setIsModalOpen(!isModalOpen)} className="text-gray-900">
+                <button onClick={() => setIsModalOpen(!isModalOpen)} className="text-gray-900 text-4xl">
                     ☰
                 </button>
             </div>
