@@ -14,6 +14,7 @@ const Pricing = () => {
       price: "Starting At ₹22,167 per Sqft",
       size: "3964 & 4382 SQFT",
       image: "https://5.imimg.com/data5/SELLER/Default/2024/5/415601493/BY/JY/JC/220900187/a-modern-tv-wall-unit-is-seamles-500x500.jpg",
+      highlight: true,
     },
   ];
 
@@ -108,3 +109,15 @@ const Pricing = () => {
 };
 
 export default Pricing;
+
+
+
+
+
+
+
+
+
+
+// image: "https://www.decorpot.com/images/616698669top-15-insider-tip-%20to-a-high-end-luxury-interior-design-for-your-dream-home.jpg",
+// image: "https://5.imimg.com/data5/SELLER/Default/2024/5/415601493/BY/JY/JC/220900187/a-modern-tv-wall-unit-is-seamles-500x500.jpg",
