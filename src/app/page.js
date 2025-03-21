@@ -57,11 +57,12 @@ export default function Home() {
       <div ref={priceref}>
         <Pricing/>
       </div>
-      <div>
-        <DesignInfo></DesignInfo>
-      </div>
+     
       <div>
         <MarriottResidences></MarriottResidences>
+      </div>
+      <div>
+        <DesignInfo></DesignInfo>
       </div>
 
       <div ref={amenitiesRef}>
@@ -75,9 +76,7 @@ export default function Home() {
         <LocationAdvantage />
       </div>
 
-      <div ref={otherRef}>
-        <Other />
-      </div>
+      
 
       <Footer />
     </div>

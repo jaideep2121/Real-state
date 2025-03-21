@@ -41,8 +41,8 @@ const Tab = () => {
             <div className="flex flex-col gap-2 mt-3">
                 {[
                     { label: 'Status : New Launch', size: '' },
-                    { label: '3 BHK: 2500-2800 Sq. Ft.', size: '' },
-                    { label: '4 BHK: 3800-4200 Sq. Ft.', size: '' },
+                    { label: '3 BHK: 2600 & 2900 Sq. Ft.', size: '' },
+                    { label: '4 BHK: 3900 & 4300 Sq. Ft.', size: '' },
                 ].map((item, index) => (
                     <div key={index} className="flex gap-2 items-center">
                         <img

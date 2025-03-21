@@ -1,5 +1,5 @@
 import React from 'react';
-import { School as Pool, Dumbbell, Car, Trees as Tree, Shield, Wifi } from 'lucide-react';
+import { School as Pool, Dumbbell, Car, Trees as Tree, Shield, Wifi, Hotel } from 'lucide-react';
 
 const amenities = [
   {
@@ -32,12 +32,13 @@ const amenities = [
     description: "Round-the-clock security with CCTV surveillance",
     image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=1600"
   },
-  {
-    icon: <Wifi className="w-8 h-8" />,
-    title: "High-Speed Internet",
-    description: "Fiber-optic internet throughout the premises",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=1600"
-  }
+  
+    {
+      icon: <Hotel className="w-8 h-8" />,
+      title: "Services",
+      description: "Hotel like services from service team Marriott company",
+      image: "https://media.istockphoto.com/id/1162152175/photo/manager-of-the-hotel-showing-the-room.jpg?s=612x612&w=0&k=20&c=i6hkhIM5XBjJLUwJ18rGZia_7ovNGC51fGnBcObq068="
+    },
 ];
 
 const Amenities = () => {

@@ -4,14 +4,14 @@ const Pricing = () => {
   const plans = [
     {
       type: "3 BHK",
-      price: "Starting At ₹23,057 per Sqft",
+      price: " Starting At ₹22,167 per Sqft",
       size: "2673 & 2930 SQFT",
       image: "https://www.decorpot.com/images/616698669top-15-insider-tip-%20to-a-high-end-luxury-interior-design-for-your-dream-home.jpg",
       highlight: true,
     },
     {
       type: "4 BHK",
-      price: "Starting At ₹22,167 per Sqft",
+      price: "Starting At ₹23,057 per Sqft",
       size: "3964 & 4382 SQFT",
       image: "https://5.imimg.com/data5/SELLER/Default/2024/5/415601493/BY/JY/JC/220900187/a-modern-tv-wall-unit-is-seamles-500x500.jpg",
       highlight: true,

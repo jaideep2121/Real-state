@@ -13,8 +13,8 @@ const Nav = ({ onScroll }) => {
             </a>
 
             {/* Menu */}
-            <ul className="hidden md:flex space-x-6">
-                {['Home', 'Why Choose us','Pricing', 'Amenities', 'Location', 'Other Projects', 'Contact Us'].map((item) => (
+            <ul className="hidden md:flex space-x-14">
+                {['Home', 'Why WESTIN Residence','Pricing', 'Amenities', 'Location'].map((item) => (
                     <li key={item} className="text-gray-900 font-mullish py-7 hover:text-gray-600 cursor-pointer transition-all duration-200 relative font-bold group" onClick={() => onScroll(item)}>
                         {item}
                         <div className="absolute bottom-0 w-full h-1 bg-blue-400 hidden group-hover:block transition-all duration-200"></div>
@@ -43,12 +43,12 @@ const Nav = ({ onScroll }) => {
                 <div className="absolute top-16 left-0 w-full bg-white shadow-lg md:hidden">
   {[
     'Home',
-    'Why Choose us',
+    'Why WESTIN Residence',
     'Pricing',
     'Amenities',
     'Location',
-    'Other Projects',
-    'Contact Us',
+    
+    
   ].map((item) => (
     <a
       key={item}
