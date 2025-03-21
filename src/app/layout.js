@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ToastContainer } from 'react-toastify';
 import "./globals.css";
 import Image from "next/image";
+import Head from "next/head";
 
 
 const geistSans = Geist({
