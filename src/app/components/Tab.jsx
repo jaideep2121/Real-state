@@ -36,7 +36,7 @@ const Tab = () => {
                 STARTING AT
             </h3>
             <div className="flex justify-center items-center border py-1 font-bold text-base sm:text-lg">
-                ₹ 5.5 Cr*
+                ₹ 5.94 Cr*
             </div>
             <div className="flex flex-col gap-2 mt-3">
                 {[

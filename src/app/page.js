@@ -10,6 +10,9 @@ import Footer from './components/Footer';
 import Other from './components/Other';
 import Chatbot from './components/Chatbot';
 import Pricing from './components/Pricing';
+import ClubhouseInfo from './components/Clubhouse';
+import MarriottResidences from './components/Marriot';
+import DesignInfo from './components/Add';
 
 
 export default function Home() {
@@ -54,9 +57,18 @@ export default function Home() {
       <div ref={priceref}>
         <Pricing/>
       </div>
+      <div>
+        <DesignInfo></DesignInfo>
+      </div>
+      <div>
+        <MarriottResidences></MarriottResidences>
+      </div>
 
       <div ref={amenitiesRef}>
         <Amenties />
+      </div>
+      <div>
+        <ClubhouseInfo></ClubhouseInfo>
       </div>
 
       <div ref={locationRef}>

@@ -14,9 +14,9 @@ const projects = [
       description: 'A sleek modern apartment located in the heart of the city.',
     },  {
         id: 3,
-        img: 'https://res.cloudinary.com/myhq/image/upload/q_auto/w_1920/f_auto/workspaces/dlf-epitome-7b-dlf-epitome-7b/commercial-leasing/pjkaw8.jpg',
-        title: 'Modern Apartment',
-        description: 'A sleek modern apartment located in the heart of the city.',
+        img: 'https://media.istockphoto.com/id/104731717/photo/luxury-resort.jpg?s=612x612&w=0&k=20&c=cODMSPbYyrn1FHake1xYz9M8r15iOfGz9Aosy9Db7mI=',
+        title: 'Modern Hotel',
+        description: 'A stunning Hotel villa with modern amenities and breathtaking views.',
       },
   ];
 const Other = () => {
