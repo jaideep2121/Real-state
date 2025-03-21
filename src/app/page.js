@@ -67,9 +67,9 @@ export default function Home() {
       <div ref={amenitiesRef}>
         <Amenties />
       </div>
-      <div>
+      {/* <div>
         <ClubhouseInfo></ClubhouseInfo>
-      </div>
+      </div> */}
 
       <div ref={locationRef}>
         <LocationAdvantage />
