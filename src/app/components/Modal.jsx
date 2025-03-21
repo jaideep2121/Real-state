@@ -11,7 +11,7 @@ export const Modal = ({ isOpen, onClose }) => {
     name: '',
     email: '',
     phone: '',
-    comments: '',
+    comment: '',
   });
 
   if (!isOpen) return null;
@@ -34,7 +34,7 @@ export const Modal = ({ isOpen, onClose }) => {
           name: '',
           email: '',
           phone: '',
-          comments: '',
+          comment: '',
         });
       
       } catch (error) {
@@ -128,14 +128,15 @@ export const Modal = ({ isOpen, onClose }) => {
                 Comments
               </label>
               <textarea
-                id="comments"
-                name="comments"
-                value={formData.comments}
-                onChange={handleChange}
-                rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
+  id="comment"
+  name="comment"
+  value={formData.comment}
+  onChange={handleChange}
+  rows={3}
+  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+  required
+/>
+
             </div>
 
             <button
@@ -160,7 +161,7 @@ export const Modal = ({ isOpen, onClose }) => {
 
             {/* Email Button */}
             <a
-              href={`mailto:${formData.email}?subject=Contact Request&body=${formData.comments}`}
+              href={`mailto:${formData.email}?subject=Contact Request&body=${formData.comment}`}
               className="w-[48%] bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors text-center"
             >
               Email
