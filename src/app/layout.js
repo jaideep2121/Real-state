@@ -18,21 +18,16 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "WESTIN Residence",
   description: "Westin Residence - Find your perfect real estate property today.",
-  icons: {
-    icon: [
-      {
-        media: '(prefers-color-scheme: light)',
-        url: '/public/window.svg',
-        href: '/west.png',
-      },,
-    
-    ],
-  },
+ 
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <title>WESTIN Residence</title>
+        <meta name="description" content="Westin Residence - Find your perfect real estate property today." />
+      </Head>
     <body
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
