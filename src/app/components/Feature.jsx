@@ -3,54 +3,47 @@ import React from 'react';
 
 const Feature = () => {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-          Why Choose Us
-        </h2>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-          {/* Card 1 */}
-          <div className="group text-center p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition">
-            <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition">
-              <Home className="w-10 h-10 text-primary group-hover:text-primary-dark transition" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              Wide Range of Properties
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              From cozy apartments to luxury villas, find the perfect property that matches your lifestyle.
-            </p>
-          </div>
+    <div className="max-w-5xl mx-auto p-6">
+    {/* Heading */}
+    <h1 className="text-3xl font-bold text-center mb-6">
+      The WESTIN Residence
+    </h1>
 
-          {/* Card 2 */}
-          <div className="group text-center p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition">
-            <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition">
-              <TrendingUp className="w-10 h-10 text-primary group-hover:text-primary-dark transition" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              Market Analysis
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Get detailed market insights and property valuations from our expert team.
-            </p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="group text-center p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition">
-            <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition">
-              <Building2 className="w-10 h-10 text-primary group-hover:text-primary-dark transition" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              Professional Guidance
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Our experienced agents will guide you through every step of your real estate journey.
-            </p>
-          </div>
-        </div>
+    <div className="flex flex-col md:flex-row gap-6 items-center">
+      {/* Image on the left */}
+      <div className="w-full md:w-1/2">
+        <img
+          src="https://media-cdn.tripadvisor.com/media/photo-s/19/ef/20/7c/the-westin-gurgaon-new.jpg"
+          alt="The WESTIN Residence"
+          className="w-full h-auto rounded-lg shadow-lg"
+        />
       </div>
-    </section>
+
+      {/* Content on the right */}
+      <div className="w-full md:w-1/2">
+        <h2 className="text-xl font-semibold mb-4">
+          Why Choose The WESTIN Residence?
+        </h2>
+        <ul className="list-disc pl-5 space-y-2 text-gray-700">
+          <li>
+            <strong>Prime Location</strong> – Situated in the heart of the city with easy access to shopping, dining, and entertainment.
+          </li>
+          <li>
+            <strong>Luxury Interiors</strong> – Designed with premium materials and modern aesthetics to provide maximum comfort.
+          </li>
+          <li>
+            <strong>State-of-the-Art Amenities</strong> – Including a rooftop pool, fitness center, and concierge service.
+          </li>
+          <li>
+            <strong>Security and Privacy</strong> – 24/7 security and private access to ensure peace of mind.
+          </li>
+          <li>
+            <strong>Green Spaces</strong> – Beautifully landscaped gardens and open areas to relax and unwind.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
   );
 };
 

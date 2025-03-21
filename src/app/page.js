@@ -11,6 +11,7 @@ import Other from './components/Other';
 import Chatbot from './components/Chatbot';
 import Pricing from './components/Pricing';
 
+
 export default function Home() {
   const homeRef = useRef(null);
   const featureRef = useRef(null);
@@ -31,7 +32,7 @@ export default function Home() {
         className="relative w-full h-screen bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://media.istockphoto.com/id/184962061/photo/business-towers.jpg?s=612x612&w=0&k=20&c=gLQLQ9lnfW6OnJVe39r516vbZYupOoEPl7P_22Un6EM=')",
+            "url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/467537548.jpg?k=25b37465b524b3a7518e59e5758419f13b456ee2530455435a6c5478e15b39e9&o=&hp=1`)",
         }}
       >
         <Nav
