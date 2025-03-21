@@ -54,7 +54,7 @@ export const Modal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4 z-20">
       <div className="bg-white rounded-xl w-full max-w-lg flex relative overflow-hidden">
         {/* Left Side: Image */}
         <div className="hidden md:block w-1/3">
