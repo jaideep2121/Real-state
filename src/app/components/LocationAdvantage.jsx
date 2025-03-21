@@ -5,25 +5,32 @@ const LocationAdvantage = () => {
   const locationAdvantages = [
     {
       icon: <MdLocationOn className="w-6 h-6 text-blue-500" />,
-      title: 'Nearby Schools',
-      description: 'Top-rated schools are just a few minutes away, ensuring quality education for your children.',
+      title: 'Strategic Location',
+      description: 'Sector-103 is strategically located with both Gurugram as well as Delhi being equidistant.',
     },
     {
       icon: <MdLocationOn className="w-6 h-6 text-blue-500" />,
-      title: 'Public Transport Access',
-      description: 'Easy access to bus and metro stations for quick travel to the city center.',
+      title: 'Largest Residential Sector',
+      description: 'Sector-103 is the largest residential sector planned on the Dwarka expressway.',
     },
     {
       icon: <MdLocationOn className="w-6 h-6 text-blue-500" />,
-      title: 'Shopping Malls',
-      description: 'Major shopping malls and grocery stores are nearby for your everyday needs.',
+      title: 'Excellent Connectivity',
+      description: 'Just 10 minutes from IGI Airport, NH8, and Hero Honda Chowk.',
     },
     {
       icon: <MdLocationOn className="w-6 h-6 text-blue-500" />,
-      title: 'Hospitals & Clinics',
-      description: 'Several hospitals and healthcare centers are within a short driving distance.',
+      title: 'Established Infrastructure',
+      description: 'Sector-103 already has DPS School and an International Hospital operational.',
     },
+    {
+      icon: <MdLocationOn className="w-6 h-6 text-blue-500" />,
+      title: 'Green Spaces',
+      description: 'Sector-103 abuts 100 acres of green area, offering a peaceful environment.',
+    },
+
   ];
+  
 
   return (
     <div className="bg-secondary py-12 md:py-16">
@@ -41,15 +48,37 @@ const LocationAdvantage = () => {
         {/* Map and Features */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-10">
           {/* Google Map */}
-          <div className="rounded-xl overflow-hidden shadow-lg h-[300px] sm:h-[400px]">
+          {/* <div className="rounded-xl overflow-hidden shadow-lg h-[300px] sm:h-[400px]">
             <iframe
               title="Property Location"
               className="w-full h-full border-0"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14043.69337865887!2d77.0266!3d28.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d77df9a851d%3A0x929ba7cfcf72c04!2sGurugram%2C%20Haryana%2C%20India!5e0!3m2!1sen!2sin!4v1645564756836!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14043.69337865887!2d76.98291849382097!3d28.495644263290323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d77df9a851d%3A0x929ba7cfcf72c04!2sGurugram%2C%20Haryana%2C%20India!5e0!3m2!1sen!2sin!4v1645564756836!5m2!1sen!2sin" 
+  width="100%" 
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div>
+          </div> */}
+          {/* <div className="rounded-xl overflow-hidden shadow-lg h-[300px] sm:h-[400px]">
+  <iframe
+    title="Property Location"
+    className="w-full h-full border-0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDfQPMreUTd19zASk8e5YFfPrXweaUvBm4&q=28.495713399014736,76.98260009901026&zoom=15"
+    width="100%"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div> */}
+<div className="rounded-xl overflow-hidden shadow-lg h-[300px] sm:h-[400px]">
+  <iframe
+    title="Property Location"
+    className="w-full h-full border-0"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=76.9786001%2C28.4917134%2C76.9866001%2C28.4997134&layer=mapnik&marker=28.495713399014736%2C76.98260009901026#map=16/28.4957134/76.9826001"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
+
+
 
           {/* Location Advantages */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -75,7 +104,15 @@ const LocationAdvantage = () => {
         <div className="text-center">
           <div className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 cursor-pointer">
             <MdLocationOn className="w-5 h-5" />
-            <span className="font-medium text-sm sm:text-base">Get Directions</span>
+            <a
+ href="https://www.google.com/maps/dir/?api=1&destination=28.495644263290323,76.98291849382097"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="font-medium text-sm sm:text-base text-blue-600 hover:text-blue-800"
+>
+  Get Directions
+</a>
+
           </div>
         </div>
       </div>

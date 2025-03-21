@@ -62,11 +62,15 @@ const Nav = ({ onScroll }) => {
             )}
             <a
   href="tel:+918287701077"
-  className="block md:hidden py-3 px-4 border-t border-gray-200 text-gray-900 hover:bg-gray-100 flex items-center gap-2"
+  className="
+    block md:hidden py-3 px-4 border-t border-gray-200 text-gray-900 
+    hover:bg-gray-100 flex items-center gap-2 
+    transition-transform transform 
+    hover:scale-110 active:scale-95"
 >
   <FaPhone size={20} />
-  
 </a>
+
 
         </div>
     );
