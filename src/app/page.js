@@ -35,7 +35,7 @@ export default function Home() {
         className="relative w-full h-screen bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/467537548.jpg?k=25b37465b524b3a7518e59e5758419f13b456ee2530455435a6c5478e15b39e9&o=&hp=1`)",
+            "url('https://cache.marriott.com/content/dam/marriott-renditions/DELWI/delwi-exterior-7707-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1300px:*`)",
         }}
       >
         <Nav
