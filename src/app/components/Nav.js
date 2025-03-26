@@ -23,9 +23,9 @@ const Nav = ({ onScroll }) => {
             </ul>
 
             {/* Contact Button */}
-            <a href="tel:+919999999999">
+            <a href="tel:+919311591038">
   <div className="h-14 bg-gradient-to-r from-gray-200 to-yellow-100 flex items-center justify-center text-black ring px-4 hover:scale-110 transform transition duration-300 ease-in-out hidden sm:flex rounded">
-    +918287701077
+    +919311591038
   </div>
 </a>
 
@@ -61,7 +61,7 @@ const Nav = ({ onScroll }) => {
 </div>
             )}
             <a
-  href="tel:+918287701077"
+  href="tel:+919311591038"
   className="
     block md:hidden py-3 px-4 border-t border-gray-200 text-gray-900 
     hover:bg-gray-100 flex items-center gap-2 
