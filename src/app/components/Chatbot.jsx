@@ -46,7 +46,7 @@ const Chatbot = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent(`Hello, I'm interested in your services.`);
-    window.open(`https://wa.me/8287701077?text=${message}`, '_blank');
+    window.open(`https://wa.me/9311591038?text=${message}`, '_blank');
   };
 
   return (

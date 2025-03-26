@@ -63,7 +63,16 @@ export const Modal = ({ isOpen, onClose }) => {
       [name]: value,
     }));
   };
-
+  const handleWhatsApp = () => {
+    const message = encodeURIComponent(`Hello, I'm interested in your services.`);
+    window.open(`https://wa.me/9311591038?text=${message}`, '_blank');
+  };
+  const handleEmail = () => {
+    const subject = encodeURIComponent('Contact Request');
+    const body = encodeURIComponent('Hello, I am interested in your services.');
+    window.open(`mailto:stellorreators2024@gmail.com?subject=${subject}&body=${body}`, '_blank');
+  };
+  
   return (
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4 z-20">
       <div
@@ -165,21 +174,22 @@ export const Modal = ({ isOpen, onClose }) => {
           <div className="flex justify-between mt-3">
             {/* WhatsApp Button */}
             <a
-              href={`https://wa.me/91${formData.phone}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-[48%] bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors text-center"
-            >
-              WhatsApp
-            </a>
+ onClick={handleWhatsApp}
+  rel="noopener noreferrer"
+  className="w-[48%] bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors text-center"
+>
+  WhatsApp
+</a>
+
 
             {/* Email Button */}
             <a
-              href={`mailto:${formData.email}?subject=Contact Request&body=${formData.comment}`}
-              className="w-[48%] bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors text-center"
-            >
-              Email
-            </a>
+  onClick={handleEmail}
+  className="w-[48%] bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors text-center"
+>
+  Email
+</a>
+
           </div>
         </div>
       </div>
