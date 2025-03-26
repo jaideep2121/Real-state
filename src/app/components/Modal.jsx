@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { X } from 'lucide-react';
-import  { datastore } from "../serveractions/actions"
+import { datastore } from "../serveractions/actions";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 export const Modal = ({ isOpen, onClose }) => {
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const modalRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,36 +15,46 @@ export const Modal = ({ isOpen, onClose }) => {
     comment: '',
   });
 
-  if (!isOpen) return null;
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log('Form submitted:', formData);
-  //   onClose();
-  // };
-   const handleSubmit = async (e) => {
-      e.preventDefault();
-      setLoading(true);
-  
-      try {
-        console.log(formData);
-        await datastore(formData); // Assuming datastore is async
-  
-        toast.success('Form submitted successfully!');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          comment: '',
-        });
-      
-      } catch (error) {
-        console.error(error);
-        toast.error('Failed to submit form');
-      } finally {
-        setLoading(false);
+  // Close modal on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onClose();
       }
     };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      console.log(formData);
+      await datastore(formData);
+
+      toast.success('Form submitted successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        comment: '',
+      });
+    } catch (error) {
+      console.error(error);
+      toast.error('Failed to submit form');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +66,10 @@ export const Modal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4 z-20">
-      <div className="bg-white rounded-xl w-full max-w-lg flex relative overflow-hidden">
+      <div
+        ref={modalRef}
+        className="bg-white rounded-xl w-full max-w-lg flex relative overflow-hidden"
+      >
         {/* Left Side: Image */}
         <div className="hidden md:block w-1/3">
           <img
@@ -124,26 +138,26 @@ export const Modal = ({ isOpen, onClose }) => {
             </div>
 
             <div>
-              <label htmlFor="comments" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="comment" className="block text-sm font-medium text-gray-700 mb-1">
                 Comments
               </label>
               <textarea
-  id="comment"
-  name="comment"
-  value={formData.comment}
-  onChange={handleChange}
-  rows={3}
-  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-  required
-/>
-
+                id="comment"
+                name="comment"
+                value={formData.comment}
+                onChange={handleChange}
+                rows={3}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
             </div>
 
             <button
               type="submit"
               className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+              disabled={loading}
             >
-              Submit
+              {loading ? 'Submitting...' : 'Submit'}
             </button>
           </form>
 
@@ -169,37 +183,6 @@ export const Modal = ({ isOpen, onClose }) => {
           </div>
         </div>
       </div>
-
-      {/* Responsive Adjustments */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .max-w-lg {
-            width: 90%;
-          }
-
-          .md\\:block {
-            display: none;
-          }
-
-          .rounded-l-xl {
-            border-radius: 0;
-          }
-
-          .w-full {
-            width: 100%;
-          }
-
-          .px-3 {
-            padding-left: 12px;
-            padding-right: 12px;
-          }
-
-          .py-2 {
-            padding-top: 10px;
-            padding-bottom: 10px;
-          }
-        }
-      `}</style>
     </div>
   );
 };

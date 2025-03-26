@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal } from './Modal';
 
-const Footer = () => {
+const Footer = ({ onScroll }) => {
+     const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <footer className="bg-gray-800 text-gray-300 py-8 mt-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -21,18 +23,19 @@ const Footer = () => {
             Quick Links
           </h3>
           <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
+          <li>
+  <a onClick={() => onScroll('Home')} className="hover:text-white transition">
+    Home
+  </a>
+</li>
+
             <li>
-              <a href="#" className="hover:text-white transition">
-                Home
-              </a>
+            <a onClick={() => onScroll('Why WESTIN Residence')} className="hover:text-white transition">
+    Services
+  </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white transition">
+              <a onClick={()=>setIsModalOpen(true)} className="hover:text-white transition">
                 Contact
               </a>
             </li>
@@ -63,6 +66,10 @@ const Footer = () => {
       <div className="text-center text-xs sm:text-sm border-t border-gray-700 pt-4 mt-6">
         This is not the official website of developer property, it belongs to authorised channel partners for information purposes only. All rights for logo & images are reserved to the developer. Thank you for visiting our website. This disclaimer ("Disclaimer") is applicable to this website and all microsites and websites owned by us. By using or accessing this website you agree with the Disclaimer without any qualification or limitation. || All Rights Reserved CopyRight © 2025
       </div>
+       <Modal 
+                      isOpen={isModalOpen} 
+                      onClose={() => setIsModalOpen(false)} 
+                  />
     </footer>
   );
 };

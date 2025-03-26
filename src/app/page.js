@@ -41,7 +41,7 @@ export default function Home() {
         <Nav
           onScroll={(section) => {
             if (section === 'Home') handleScroll(homeRef);
-            if (section === 'Why Choose us') handleScroll(featureRef);
+            if (section === 'Why WESTIN Residence') handleScroll(featureRef);
             if (section === 'Amenities') handleScroll(amenitiesRef);
             if (section === 'Location') handleScroll(locationRef);
             if (section === 'Other Projects') handleScroll(otherRef);
@@ -78,7 +78,14 @@ export default function Home() {
 
       
 
-      <Footer />
+      <Footer  onScroll={(section) => {
+            if (section === 'Home') handleScroll(homeRef);
+            if (section === 'Why WESTIN Residence') handleScroll(featureRef);
+            if (section === 'Amenities') handleScroll(amenitiesRef);
+            if (section === 'Location') handleScroll(locationRef);
+            if (section === 'Other Projects') handleScroll(otherRef);
+            if(section==='Pricing') handleScroll(priceref);
+          }} />
     </div>
   );
 }
